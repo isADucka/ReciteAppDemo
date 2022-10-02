@@ -1,5 +1,7 @@
 package pojo.po;
 
+import java.util.Date;
+
 /**
  * 用户个人信息封装类
  */
@@ -7,11 +9,25 @@ public class User {
     private int userId;
     private String nickName;
     private String sex;
-    private String birthday;
+    private Date birthday;
     private int points;
     private String imagePath;
-    private String cityId;
+    private int cityId;
     private String school;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "userId=" + userId +
+                ", nickName='" + nickName + '\'' +
+                ", sex='" + sex + '\'' +
+                ", birthday=" + birthday +
+                ", points=" + points +
+                ", imagePath='" + imagePath + '\'' +
+                ", cityId=" + cityId +
+                ", school='" + school + '\'' +
+                '}';
+    }
 
     public int getUserId() {
         return userId;
@@ -23,6 +39,14 @@ public class User {
 
     public String getNickName() {
         return nickName;
+    }
+
+    public int getCityId() {
+        return cityId;
+    }
+
+    public void setCityId(int cityId) {
+        this.cityId = cityId;
     }
 
     public void setNickName(String nickName) {
@@ -37,11 +61,11 @@ public class User {
         this.sex = sex;
     }
 
-    public String getBirthday() {
+    public Date getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(String birthday) {
+    public void setBirthday(Date birthday) {
         this.birthday = birthday;
     }
 
@@ -61,13 +85,6 @@ public class User {
         this.imagePath = imagePath;
     }
 
-    public String getCityId() {
-        return cityId;
-    }
-
-    public void setCityId(String cityId) {
-        this.cityId = cityId;
-    }
 
     public String getSchool() {
         return school;
@@ -77,7 +94,7 @@ public class User {
         this.school = school;
     }
 
-    public User(int userId, String nickName, String sex, String birthday, int points, String imagePath, String cityId, String school) {
+    public User(int userId, String nickName, String sex, Date birthday, int points, String imagePath, int cityId, String school) {
         this.userId = userId;
         this.nickName = nickName;
         this.sex = sex;
