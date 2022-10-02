@@ -1,0 +1,6 @@
+<!DOCTYPE mapper>
+<mapper namespace="UserMapper">
+    <select id="selectUserById" resultType="pojo.po.User">
+        select * from user where userId = #{userId}
+    </select>
+</mapper>
