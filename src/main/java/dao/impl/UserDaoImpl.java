@@ -2,26 +2,17 @@ package dao.impl;
 
 import com.zz.core.SqlSession;
 import com.zz.core.SqlSessionFactory;
-import com.zz.core.SqlSessionFactoryBuilder;
-import com.zz.utils.Resources;
 import dao.UserDao;
 import pojo.po.User;
+import utils.DaoUtil;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
 
 public class UserDaoImpl implements UserDao {
     private final SqlSessionFactory sqlSessionFactory;
 
     public UserDaoImpl() {
-        InputStream input = Resources.getResourceAsStream("easydao-config.xml");
-        this.sqlSessionFactory = new SqlSessionFactoryBuilder().build(input);
-        try {
-            input.close();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        this.sqlSessionFactory = DaoUtil.getSqlSessionFactory();
     }
 
     @Override
