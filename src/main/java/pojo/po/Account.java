@@ -8,6 +8,15 @@ public class Account {
     private String number;
     private String password;
 
+    @Override
+    public String toString() {
+        return "Account{" +
+                "userId=" + userId +
+                ", number='" + number + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
+
     public Account() {
     }
 
