@@ -1,0 +1,6 @@
+<!DOCTYPE mapper>
+<mapper namespace="AccountMapper">
+    <select id="checkAccount" resultType="pojo.po.Account">
+        select * from account where number = #{number} and password = #{password}
+    </select>
+</mapper>
